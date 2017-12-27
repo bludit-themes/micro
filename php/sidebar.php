@@ -7,8 +7,7 @@
 <ul class="static-pages">
 	<?php
 		$staticPages = $dbPages->getStaticDB();
-		$staticPagesKeyList = array_keys($staticPages);
-		foreach ($staticPagesKeyList as $pageKey) {
+		foreach ($staticPages as $pageKey) {
 			$staticPage = buildPage($pageKey);
 			echo '<li>';
 			echo '<a href="'.$staticPage->permalink().'">';
