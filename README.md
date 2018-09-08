@@ -1,7 +1,8 @@
 # Micro theme for Bludit
 
 ## Compatible
-- Bludit v2.0.x
+- Bludit v3.x
+- Bludit v2.x
 
 ## Author
 - Diego

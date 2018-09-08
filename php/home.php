@@ -1,16 +1,16 @@
 <!-- Section -->
 <section class="content">
-        <?php foreach ($pages as $page): ?>
+        <?php foreach ($content as $page): ?>
                 <article class="page">
-                        <?php if( $page->title() ) { ?>
+                        <?php if($page->title()): ?>
                         <header>
                                 <h2><?php echo $page->title() ?></h2>
                         </header>
-                        <?php } ?>
+                        <?php endif ?>
 
-                        <?php if( $page->coverImage() ) { ?>
-                                <img src="<?php echo $page->coverImage() ?>" alt="<?php echo $page->slug() ?>">
-                        <?php } ?>
+                        <?php if ($page->coverImage()): ?>
+                        <img src="<?php echo $page->coverImage() ?>" alt="<?php echo $page->slug() ?>">
+                        <?php endif ?>
 
                         <?php echo $page->content() ?>
 

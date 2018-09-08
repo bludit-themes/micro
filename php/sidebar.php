@@ -1,14 +1,12 @@
 <h1 class="site-title">
-        <a href="<?php echo $Site->url() ?>">
-        <?php echo $Site->title() ?>
+        <a href="<?php echo $site->url() ?>">
+        <?php echo $site->title() ?>
         </a>
 </h1>
 
 <ul class="static-pages">
 	<?php
-		$staticPages = $dbPages->getStaticDB();
-		foreach ($staticPages as $pageKey) {
-			$staticPage = buildPage($pageKey);
+		foreach ($staticContent as $staticPage) {
 			echo '<li>';
 			echo '<a href="'.$staticPage->permalink().'">';
 			echo $staticPage->title();
