@@ -6,7 +6,6 @@
 
 ## Author
 - Diego
-- @bludit
 
 ## Screenshot
 ![screenshot](https://raw.githubusercontent.com/bludit-themes/micro/master/screenshot.png)
