@@ -25,11 +25,11 @@
 <ul class="pagination">
 <?php
 	if (Paginator::showPrev()) {
-		echo '<li><a href="'.Paginator::prevPageUrl().'">'.$L->get('Previous page').'</a></li>';
+		echo '<li class="float-left"><a href="'.Paginator::previousPageUrl().'">'.$L->get('Previous page').'</a></li>';
 	}
 
 	if (Paginator::showNext()) {
-		echo '<li><a href="'.Paginator::nextPageUrl().'">'.$L->get('Next page').'</a></li>';
+		echo '<li class="float-right"><a href="'.Paginator::nextPageUrl().'">'.$L->get('Next page').'</a></li>';
 	}
 ?>
 </ul>
