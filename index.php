@@ -9,13 +9,13 @@
 	<div id="fh5co-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-3">
+				<div class="col-lg-8 offset-lg-3">
 					<div class="row">
-						<div class="col-md-2">
+						<div class="col-lg-2">
 						<?php include(THEME_DIR_PHP.'sidebar.php') ?>
 						</div>
 
-						<div class="col-md-6">
+						<div class="col-lg-6">
 						<?php include(THEME_DIR_PHP.'home.php') ?>
 						</div>
 					</div>
@@ -28,7 +28,7 @@
 	<footer id="fh5co-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-10 col-md-offset-1 text-center">
+				<div class="col-lg-10 offset-lg-1 text-center">
 					<p>
 						<?php echo $site->footer() ?>
 						<br>
