@@ -2,12 +2,15 @@
 <section class="content">
         <?php foreach ($content as $page): ?>
                 <article class="page">
-                        <?php if($page->title()): ?>
                         <header>
-                                <h2><?php echo $page->title() ?></h2>
+                            <h2>
+                                <a href="<?php echo htmlentities($page->permalink(), ENT_QUOTES | ENT_HTML401)?>">
+                                    <?php 
+                                        echo htmlentities($page->title() ? $page->title() : $page->permalink() );
+                                    ?>
+                                </a>
+                            </h2>
                         </header>
-                        <?php endif ?>
-
                         <?php if ($page->coverImage()): ?>
                         <img src="<?php echo $page->coverImage() ?>" alt="<?php echo $page->slug() ?>">
                         <?php endif ?>
