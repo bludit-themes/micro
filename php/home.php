@@ -51,14 +51,14 @@
         }
     }
     ?>
-	<?php if ( isset($previousLink) ): ?>
-		<li class="float-left">
+    <?php if ( isset($previousLink) ): ?>
+        <li class="float-left">
             <a href="<?php echo htmlentities( $previousLink, ENT_QUOTES | ENT_HTML401 ); ?>">
                 <?php echo $L->get('Previous page') ?>
             </a>
         </li>
     <?php endif; ?>
-	<?php if ( isset($nextLink) ): ?>
+    <?php if ( isset($nextLink) ): ?>
         <li class="float-right">
             <a href="<?php echo htmlentities( $nextLink, ENT_QUOTES | ENT_HTML401 ); ?>">
                 <?php echo $L->get('Next page') ?>
