@@ -16,9 +16,9 @@
 <?php echo Theme::cssBootstrap(); ?>
 
 <!-- Include CSS Styles from this theme -->
+<?php echo Theme::css('css/open-sans.css'); ?>
 <?php echo Theme::css('css/style.css'); ?>
 <?php echo Theme::css('css/bludit.css'); ?>
-<?php echo Theme::css('css/open-sans.css'); ?>
 
 <?php
 	echo '<!--[if lt IE 9]>';
