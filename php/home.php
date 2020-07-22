@@ -31,25 +31,23 @@ $pageHandler = new Pages();
 $previousLink = null;
 $nextLink = null;
 $areTherePages = !!count($content);
-if ( ( $isPage || $isHome ) ) {
-    if ( $isPage && $areTherePages ) {
-        $currentPage = $content[0]; 
-        if( isset($currentPage) ) {
-            if ( $currentPage->previousKey() ) {
-                $previousLink = buildPage($currentPage->previousKey())->permalink();
-            }
-            if ( $currentPage->nextKey() ) {
-                $nextLink = buildPage($currentPage->nextKey())->permalink();
-            }
+if ( $isPage && $areTherePages ) {
+    $currentPage = $content[0]; 
+    if( isset($currentPage) ) {
+        if ( $currentPage->previousKey() ) {
+            $previousLink = buildPage($currentPage->previousKey())->permalink();
+        }
+        if ( $currentPage->nextKey() ) {
+            $nextLink = buildPage($currentPage->nextKey())->permalink();
         }
     }
-    if ( $isHome ) {
-        if ( Paginator::showPrev() ) {
-            $previousLink = Paginator::previousPageUrl();
-        }
-        if ( Paginator::showNext() ) {
-            $nextLink = Paginator::nextPageUrl();
-        }
+}
+if ( $isHome ) {
+    if ( Paginator::showPrev() ) {
+        $previousLink = Paginator::previousPageUrl();
+    }
+    if ( Paginator::showNext() ) {
+        $nextLink = Paginator::nextPageUrl();
     }
 }
 ?>
