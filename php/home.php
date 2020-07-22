@@ -23,13 +23,48 @@
 
 <!-- Pagination -->
 <ul class="pagination">
-<?php
-	if (Paginator::showPrev()) {
-		echo '<li class="float-left"><a href="'.Paginator::previousPageUrl().'">'.$L->get('Previous page').'</a></li>';
-	}
+<?php 
 
-	if (Paginator::showNext()) {
-		echo '<li class="float-right"><a href="'.Paginator::nextPageUrl().'">'.$L->get('Next page').'</a></li>';
-	}
+$isPage = $WHERE_AM_I === 'page';
+$isHome = $WHERE_AM_I === 'home';
+$pageHandler = new Pages();
+$previousLink = null;
+$nextLink = null;
+$areTherePages = !!count($content);
+if ( ( $isPage || $isHome ) ) {
+    if ( $isPage && $areTherePages ) {
+        $currentPage = $content[0]; 
+        if( isset($currentPage) ) {
+            if ( $currentPage->previousKey() ) {
+                $previousLink = buildPage($currentPage->previousKey())->permalink();
+            }
+            if ( $currentPage->nextKey() ) {
+                $nextLink = buildPage($currentPage->nextKey())->permalink();
+            }
+        }
+    }
+    if ( $isHome ) {
+        if ( Paginator::showPrev() ) {
+            $previousLink = Paginator::previousPageUrl();
+        }
+        if ( Paginator::showNext() ) {
+            $nextLink = Paginator::nextPageUrl();
+        }
+    }
+}
 ?>
+	<?php if ( isset($previousLink) ): ?>
+		<li class="float-left">
+            <a href="<?php echo htmlentities( $previousLink, ENT_QUOTES | ENT_HTML401 ); ?>">
+                <?php echo $L->get('Previous page') ?>
+            </a>
+        </li>
+    <?php endif; ?>
+	<?php if ( isset($nextLink) ): ?>
+        <li class="float-right">
+            <a href="<?php echo htmlentities( $nextLink, ENT_QUOTES | ENT_HTML401 ); ?>">
+                <?php echo $L->get('Next page') ?>
+            </a>
+        </li>
+    <?php endif; ?>
 </ul>
