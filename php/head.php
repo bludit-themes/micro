@@ -1,7 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <meta name="author" content="Bludit CMS">
 
 <!-- Dynamic title tag -->
@@ -19,6 +18,7 @@
 <!-- Include CSS Styles from this theme -->
 <?php echo Theme::css('css/style.css'); ?>
 <?php echo Theme::css('css/bludit.css'); ?>
+<?php echo Theme::css('css/open-sans.css'); ?>
 
 <?php
 	echo '<!--[if lt IE 9]>';
