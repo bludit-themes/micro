@@ -2,12 +2,17 @@
 <section class="content">
         <?php foreach ($content as $page): ?>
                 <article class="page">
-                        <?php if($page->title()): ?>
                         <header>
-                                <h2><?php echo $page->title() ?></h2>
+                            <?php if ( $page->title() ): ?>
+                            <h2>
+                                <a href="<?php echo htmlentities($page->permalink(), ENT_QUOTES | ENT_HTML401)?>">
+                                    <?php 
+                                        echo htmlentities( $page->title() );
+                                    ?>
+                                </a>
+                            </h2>
+                            <?php endif; ?>
                         </header>
-                        <?php endif ?>
-
                         <?php if ($page->coverImage()): ?>
                         <img src="<?php echo $page->coverImage() ?>" alt="<?php echo $page->slug() ?>">
                         <?php endif ?>
@@ -15,6 +20,10 @@
                         <?php echo $page->content() ?>
 
                         <footer>
+                                <a href="<?php echo htmlentities($page->permalink(), ENT_QUOTES | ENT_HTML401)?>">
+                                    <?php echo htmlentities( $L->get('Read this article.') ); ?>
+                                </a>
+                                <br/>
                                 <?php echo $page->date() ?>
                         </footer>
                 </article>
