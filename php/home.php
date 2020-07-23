@@ -3,13 +3,15 @@
         <?php foreach ($content as $page): ?>
                 <article class="page">
                         <header>
+                            <?php if ( $page->title() ): ?>
                             <h2>
                                 <a href="<?php echo htmlentities($page->permalink(), ENT_QUOTES | ENT_HTML401)?>">
                                     <?php 
-                                        echo htmlentities($page->title() ? $page->title() : $page->permalink() );
+                                        echo htmlentities( $page->title() );
                                     ?>
                                 </a>
                             </h2>
+                            <?php endif; ?>
                         </header>
                         <?php if ($page->coverImage()): ?>
                         <img src="<?php echo $page->coverImage() ?>" alt="<?php echo $page->slug() ?>">
@@ -18,6 +20,10 @@
                         <?php echo $page->content() ?>
 
                         <footer>
+                                <a href="<?php echo htmlentities($page->permalink(), ENT_QUOTES | ENT_HTML401)?>">
+                                    <?php echo htmlentities( $L->get('Read this article.') ); ?>
+                                </a>
+                                <br/>
                                 <?php echo $page->date() ?>
                         </footer>
                 </article>
